@@ -10,10 +10,6 @@ Before you begin, ensure you have Docker installed on your system. If you don't 
 
 ## Getting Started
 
-### Clone the Repository
-
-If you have access to the course repository, clone it to your local machine. Otherwise, you can create a new directory and add a Dockerfile based on the instructions provided here.
-
 ### Build the Docker Image
 
 Navigate to the directory containing the Dockerfile and run the following command:
