@@ -10,16 +10,36 @@ Before you begin, ensure you have Docker installed on your system. If you don't 
 
 ## Getting Started
 
-### Build the Docker Image
+### Get the Docker Image
 
-Navigate to the directory containing the Dockerfile and run the following command:
+#### Pull the Docker Image (Recommended)
+
+The Docker image is hosted on GitHub Packages. To pull the image (and tag it with a more convenient name), run the following commands:
+
+```bash
+# docker pull ghcr.io/brown-cs1380/container:main
+# docker tag ghcr.io/brown-cs1380/container:main cs1380-environment
+```
+
+#### Build the Docker Image
+
+Instead of pulling the docker image, you can clone this repository, navigate to the directory containing the Dockerfile and run the following command:
 
 ```bash
 # docker build -t cs1380-environment .
 ```
 ### Run the Docker Container
 
-After the image is built, you can start a container using:
+After the image is pulled/built, you can start a container with a shared directory (recommended) using:
+
+```bash
+# docker run --name cs1380-dev -d -v /your/repository/path:/usr/src/app cs1380-environment
+```
+
+This will allow you to edit files on your host machine and have them reflected in the container.
+You will be running commands inside the container, but editing files in your favorite editor on your host machine.
+
+To start a container without a shared directory, use:
 
 ```bash
 # docker run --name cs1380-dev -d cs1380-environment
