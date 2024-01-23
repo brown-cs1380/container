@@ -15,14 +15,14 @@ Before you begin, ensure you have Docker installed on your system. If you don't 
 Navigate to the directory containing the Dockerfile and run the following command:
 
 ```bash
-docker build -t cs1380-environment .
+# docker build -t cs1380-environment .
 ```
 ### Run the Docker Container
 
 After the image is built, you can start a container using:
 
 ```bash
-docker run --name cs1380-dev -d cs1380-environment
+# docker run --name cs1380-dev -d cs1380-environment
 ```
 
 ## Working with the Container
@@ -31,18 +31,18 @@ docker run --name cs1380-dev -d cs1380-environment
 
 To interact with the container via a shell, use:
 ```bash
-docker exec -it cs1380-dev /bin/bash
+# docker exec -it cs1380-dev /bin/bash
 ```
 
 ### Stopping the Container
 
 When you're done working, you can stop the container using:
 ```bash
-docker stop cs1380-dev
+# docker stop cs1380-dev
 ```
 ### Starting the Container
 
 To start the container again, use:
 ```bash
-docker start cs1380-dev
+# docker start cs1380-dev
 ```
