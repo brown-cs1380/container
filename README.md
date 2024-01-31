@@ -17,8 +17,8 @@ Before you begin, ensure you have Docker installed on your system. If you don't 
 The Docker image is hosted on GitHub Packages. To pull the image (and tag it with a more convenient name), run the following commands:
 
 ```bash
-# docker pull ghcr.io/brown-cs1380/container:main
-# docker tag ghcr.io/brown-cs1380/container:main cs1380-environment
+docker pull ghcr.io/brown-cs1380/container:main
+docker tag ghcr.io/brown-cs1380/container:main cs1380-environment
 ```
 
 #### Build the Docker Image
@@ -26,14 +26,14 @@ The Docker image is hosted on GitHub Packages. To pull the image (and tag it wit
 Instead of pulling the docker image, you can clone this repository, navigate to the directory containing the Dockerfile and run the following command:
 
 ```bash
-# docker build -t cs1380-environment .
+docker build -t cs1380-environment .
 ```
 ### Run the Docker Container
 
 After the image is pulled/built, you can start a container with a shared directory (recommended) using:
 
 ```bash
-# docker run --name cs1380-dev -d -v /your/repository/path:/usr/src/app cs1380-environment
+docker run --name cs1380-dev -d -v /your/repository/path:/usr/src/app cs1380-environment
 ```
 
 This will allow you to edit files on your host machine and have them reflected in the container.
@@ -42,7 +42,7 @@ You will be running commands inside the container, but editing files in your fav
 To start a container without a shared directory, use:
 
 ```bash
-# docker run --name cs1380-dev -d cs1380-environment
+docker run --name cs1380-dev -d cs1380-environment
 ```
 
 ## Working with the Container
@@ -51,18 +51,18 @@ To start a container without a shared directory, use:
 
 To interact with the container via a shell, use:
 ```bash
-# docker exec -it cs1380-dev /bin/bash
+docker exec -it cs1380-dev /bin/bash
 ```
 
 ### Stopping the Container
 
 When you're done working, you can stop the container using:
 ```bash
-# docker stop cs1380-dev
+docker stop cs1380-dev
 ```
 ### Starting the Container
 
 To start the container again, use:
 ```bash
-# docker start cs1380-dev
+docker start cs1380-dev
 ```
