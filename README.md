@@ -33,11 +33,10 @@ docker build -t cs1380-environment .
 After the image is pulled/built, you can start a container with a shared directory (recommended) using:
 
 ```bash
-docker run --name cs1380-dev -d -v /your/repository/path:/usr/src/app cs1380-environment
+docker run --name cs1380-dev -d -v /your/repository/on/host:/usr/src/app cs1380-environment
 ```
 
-This will allow you to edit files on your host machine and have them reflected in the container.
-You will be running commands inside the container, but editing files in your favorite editor on your host machine.
+This will allow you to edit files on your host machine (`/your/repository/on/host` — this can be any path) and have them reflected in the container (at `/usr/src/ap`). You will be running commands inside the container, but editing files in your favorite editor on your host machine.
 
 To start a container without a shared directory, use:
 
