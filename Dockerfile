@@ -4,8 +4,8 @@ FROM ubuntu:22.04
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Define build-time argument for architecture, with a default value
-ARG AWS_CLI_ARCH=x86_64
+# Set the environment variable
+ARG BUILDPLATFORM
 
 # Install necessary packages
 RUN apt-get update -y
