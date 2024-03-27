@@ -28,6 +28,12 @@ Instead of pulling the docker image, you can clone this repository, navigate to 
 ```bash
 docker build -t cs1380-environment .
 ```
+
+For the _ARM64_ architecture (aarch64):
+```bash
+docker build --build-arg AWS_CLI_ARCH=aarch64 -t cs1380-environment .
+```
+
 ### Run the Docker Container
 
 After the image is pulled/built, you can start a container with a shared directory (recommended) using:
