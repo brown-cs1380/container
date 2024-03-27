@@ -5,7 +5,7 @@ FROM ubuntu:22.04
 WORKDIR /usr/src/app
 
 # Set the environment variable
-ARG BUILDPLATFORM
+ARG TARGETPLATFORM
 
 # Install necessary packages
 RUN apt-get update -y
@@ -22,9 +22,9 @@ RUN apt-get install -y --no-install-recommends \
         texlive-fonts-recommended \
         texlive-fonts-extra \
         texlive-xetex
-RUN if [ "$BUILDPLATFORM" = "linux/amd64" ]; then \
+RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"; \
-    elif [ "$BUILDPLATFORM" = "linux/arm64" ]; then \
+    elif [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
       curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip"; \
     fi \
     && unzip awscliv2.zip \
