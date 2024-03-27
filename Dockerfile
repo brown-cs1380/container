@@ -22,9 +22,9 @@ RUN apt-get install -y --no-install-recommends \
         texlive-fonts-recommended \
         texlive-fonts-extra \
         texlive-xetex
-RUN if [ "$AWS_CLI_ARCH" = "x86_64" ]; then \
+RUN if [ "$BUILDPLATFORM" = "amd64" ]; then \
       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"; \
-    elif [ "$AWS_CLI_ARCH" = "aarch64" ]; then \
+    elif [ "$BUILDPLATFORM" = "arm64" ]; then \
       curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip"; \
     fi \
     && unzip awscliv2.zip \
