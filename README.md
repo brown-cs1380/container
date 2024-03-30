@@ -31,7 +31,7 @@ docker build -t cs1380-environment .
 
 For the _ARM64_ architecture (aarch64):
 ```bash
-docker build --build-arg AWS_CLI_ARCH=aarch64 -t cs1380-environment .
+docker build --build-arg TARGETPLATFORM="linux/arm64" -t cs1380-environment .
 ```
 
 ### Run the Docker Container
