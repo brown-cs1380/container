@@ -5,7 +5,7 @@ FROM ubuntu:22.04
 WORKDIR /usr/src/app
 
 # Set the environment variable
-ARG TARGETPLATFORM
+ARG TARGETPLATFORM="linux/amd64"
 
 # Install necessary packages
 RUN apt-get update -y
@@ -16,12 +16,15 @@ RUN apt-get install -y nodejs
 RUN apt-get install -y shellcheck
 RUN apt-get install -y git
 RUN apt-get install -y zip
+RUN apt-get install -y build-essential
 RUN apt-get install -y --no-install-recommends \
         texlive \
+        texlive-full \
         texlive-latex-extra \
         texlive-fonts-recommended \
         texlive-fonts-extra \
         texlive-xetex
+RUN apt-get install -y python3-pygments
 RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"; \
     elif [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
