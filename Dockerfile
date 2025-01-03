@@ -33,6 +33,7 @@ RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
     && unzip awscliv2.zip \
     && ./aws/install \
     && rm -rf awscliv2.zip ./aws
+RUN npm install -g jsdom html-to-text 
 
 # Clean up the apt cache to reduce image size
 RUN apt-get clean \
