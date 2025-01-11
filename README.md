@@ -21,7 +21,7 @@ docker pull ghcr.io/brown-cs1380/container:main
 docker tag ghcr.io/brown-cs1380/container:main cs1380-environment
 ```
 
-#### Build the Docker Image
+#### Build the Docker Image (Alternative)
 
 Instead of pulling the docker image, you can clone this repository, navigate to the directory containing the Dockerfile and run the following command:
 
