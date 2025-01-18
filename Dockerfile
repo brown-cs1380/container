@@ -16,6 +16,7 @@ RUN apt-get install -y nodejs
 RUN apt-get install -y shellcheck
 RUN apt-get install -y git
 RUN apt-get install -y zip
+RUN apt-get install -y jq
 RUN apt-get install -y build-essential
 RUN apt-get install -y --no-install-recommends \
         texlive \
