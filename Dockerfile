@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
        curl \
        git \
        zip \
+       # bc required for eval stage of LLM pipeline
+       bc \
        jq \
        unzip \
        shellcheck \
