@@ -34,6 +34,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
        && rm -rf aws awscliv2.zip \
        # Global npm tools
        && npm install -g jsdom html-to-text \
+       && npm install -g @tensorflow/tfjs @tensorflow/tfjs-node \ # LLM dependencies
        # Clean up
        && apt-get clean \
        && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
