@@ -15,6 +15,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
        shellcheck \
        build-essential \
        python3-pygments \
+       # pip required for BERTSCORE for LLM pipeline
+       python3-pip \
        texlive \
        texlive-latex-extra \
        texlive-fonts-recommended \
@@ -34,8 +36,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
        && rm -rf aws awscliv2.zip \
        # Global npm tools
        && npm install -g jsdom html-to-text \
-       # LLM dependencies
-       && npm install -g @tensorflow/tfjs @tensorflow/tfjs-node \
        # Clean up
        && apt-get clean \
        && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
