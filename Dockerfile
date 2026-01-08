@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
        bc \
        jq \
        unzip \
+       lsof \
        shellcheck \
        build-essential \
        python3-pygments \
